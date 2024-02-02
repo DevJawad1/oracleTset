@@ -1,0 +1,28 @@
+ans no 1
+SELECT * FROM (SELECT * FROM employees ORDER BY salary DESC ) WHERE ROWNUM <= 15
+
+ans no 2
+SELECT last_name, salary / 2 AS half_salary, department_name, job_id AS job_title FROM employees JOIN departments ON employees.department_id = departments.department_id
+
+ans no 3
+SELECT first_name, last_name FROM employees WHERE salary > 10000 AND first_name NOT IN ('Nancy', 'Diana', 'Alexander')
+
+ans no 4
+SELECT first_name FROM employees WHERE salary > (SELECT MIN(salary) FROM employees)
+
+ans no 5
+
+ans no 6
+SELECT first_name, hire_date, salary * 0.25 AS twenty_five_percent_salary FROM employees WHERE hire_date < '03-JAN-90'
+
+ans no 7
+SELECT * FROM employees WHERE LENGTH(first_name) = 9 AND SUBSTR(first_name, -1) = 'r'
+
+ans no 8
+SELECT * FROM (SELECT * FROM employees ORDER BY salary DESC ) WHERE ROWNUM <= 10
+
+ans no 9
+SELECT last_name, salary / 2 AS half_salary, department_name, job_id AS job_title FROM employees JOIN departments ON employees.department_id = departments.department_id
+
+ans no 10
+SELECT * FROM employees ORDER BY LENGTH(last_name), last_name FETCH FIRST 1 ROW ONLY;
